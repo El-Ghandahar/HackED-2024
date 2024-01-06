@@ -7,7 +7,7 @@
 size = Vector2(112, 118)
 
 [node name="Player" type="CharacterBody2D"]
-position = Vector2(588, 168)
+position = Vector2(575, 430)
 script = ExtResource("1_ctwtd")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

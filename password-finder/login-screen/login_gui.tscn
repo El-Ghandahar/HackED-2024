@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://b8kfen2cubhqb"]
+[gd_scene load_steps=2 format=3 uid="uid://b8kfen2cubhqb"]
+
+[ext_resource type="Script" path="res://login-screen/login_gui.cs" id="1_2p5ou"]
 
 [node name="LoginGUI" type="Control"]
 layout_mode = 3
@@ -7,6 +9,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_2p5ou")
 metadata/_edit_group_ = true
 metadata/_edit_lock_ = true
 

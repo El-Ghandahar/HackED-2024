@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bvq2olfrg5p2k"]
+
+[ext_resource type="PackedScene" uid="uid://bi6073tqhaol2" path="res://platformer/scenes/player.tscn" id="1_a7gun"]
+
+[node name="PlatformerWorld" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_a7gun")]
+position = Vector2(0, -38)

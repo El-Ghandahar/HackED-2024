@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://bi6073tqhaol2"]
+
+[ext_resource type="Script" path="res://platformer/scripts/player.gd" id="1_ctwtd"]
+[ext_resource type="Texture2D" uid="uid://ck5c8d7x76dl0" path="res://icon.svg" id="1_xm38c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rsugj"]
+size = Vector2(112, 118)
+
+[node name="Player" type="CharacterBody2D"]
+position = Vector2(575, 430)
+script = ExtResource("1_ctwtd")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -77)
+texture = ExtResource("1_xm38c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, -76)
+shape = SubResource("RectangleShape2D_rsugj")

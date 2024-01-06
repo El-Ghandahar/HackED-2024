@@ -3,6 +3,8 @@ using System;
 
 public partial class wordle : Control
 {
+	[Export]
+	public string word {get;set;} = "word";
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{

@@ -1,7 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://bi6073tqhaol2"]
+[gd_scene load_steps=7 format=3 uid="uid://bi6073tqhaol2"]
 
 [ext_resource type="Texture2D" uid="uid://dngethovo5e84" path="res://assets/_Idle.png" id="2_2mfy7"]
-[ext_resource type="Texture2D" uid="uid://cwy0njwrlu6km" path="res://assets/background_0.png" id="3_a6rbf"]
 
 [sub_resource type="GDScript" id="GDScript_cspdr"]
 script/source = "extends CharacterBody2D
@@ -31,6 +30,45 @@ func _physics_process(delta):
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oakod"]
 size = Vector2(21, 37.5)
+
+[sub_resource type="Animation" id="Animation_mdlmw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:hframes")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [10]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:vframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
 
 [sub_resource type="Animation" id="Animation_acc1v"]
 resource_name = "new_animation"
@@ -73,45 +111,6 @@ tracks/2/keys = {
 "values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 }
 
-[sub_resource type="Animation" id="Animation_mdlmw"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:hframes")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [10]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:vframes")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [1]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Sprite2D:frame")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [0]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_cugk2"]
 _data = {
 "RESET": SubResource("Animation_mdlmw"),
@@ -141,8 +140,3 @@ libraries = {
 "": SubResource("AnimationLibrary_cugk2")
 }
 autoplay = "new_animation"
-
-[node name="Background" type="Sprite2D" parent="."]
-show_behind_parent = true
-position = Vector2(16, -14)
-texture = ExtResource("3_a6rbf")

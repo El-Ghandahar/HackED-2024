@@ -16,7 +16,6 @@ position = Vector2(1, -1)
 
 [node name="Player" parent="." instance=ExtResource("1_a7gun")]
 position = Vector2(-103, -2)
-speed = 450
 gravity = 80
 jump_force = 1000
 
@@ -92,3 +91,6 @@ texture = ExtResource("4_7ywxo")
 show_behind_parent = true
 position = Vector2(-270, -14)
 texture = ExtResource("4_7ywxo")
+
+[node name="TileMap4" parent="." instance=ExtResource("3_a8dw6")]
+position = Vector2(-463, 72)

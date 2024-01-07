@@ -1,11 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://bid13fx38mwnm"]
+[gd_scene load_steps=8 format=3 uid="uid://bid13fx38mwnm"]
 
 [ext_resource type="Script" path="res://puzzle/nono.cs" id="1_b2k0q"]
 [ext_resource type="TileSet" uid="uid://caymj3rsmfqaf" path="res://puzzle/non.tres" id="1_vt2ru"]
 [ext_resource type="PackedScene" uid="uid://d4duovllobbdw" path="res://puzzle/FillMod.tscn" id="2_0orqs"]
 [ext_resource type="Script" path="res://puzzle/TileMap.cs" id="2_1nagq"]
 [ext_resource type="PackedScene" uid="uid://bt2of3yebjlmq" path="res://puzzle/CrossMod.tscn" id="3_sya5t"]
-[ext_resource type="Script" path="res://puzzle/swapbutton.cs" id="4_4u45h"]
 [ext_resource type="PackedScene" uid="uid://y58v4v8lcg0p" path="res://puzzle/word.tscn" id="4_vtus6"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_cnomv"]
@@ -116,19 +115,6 @@ position = Vector2(480, 416)
 
 [node name="25" type="Marker2D" parent="ColorRect2/Board"]
 position = Vector2(544, 416)
-
-[node name="Button" type="Button" parent="ColorRect2"]
-layout_mode = 0
-offset_left = 344.0
-offset_top = 28.0
-offset_right = 469.0
-offset_bottom = 62.0
-toggle_mode = true
-text = "Swap mode"
-script = ExtResource("4_4u45h")
-
-[node name="mode" type="Marker2D" parent="ColorRect2/Button"]
-position = Vector2(-29, 16)
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 2

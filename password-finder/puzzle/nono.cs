@@ -27,17 +27,16 @@ public partial class nono : Control
     public override void _Input(InputEvent @event)
     {
 		if (complete == false) {
-			if (@event.IsActionPressed("click")){
-
-				if (TileMap.markId <= 25 && TileMap.markId > 0) {
+			if (TileMap.markId <= 25 && TileMap.markId > 0) {
 				var _target = GetNode("./ColorRect2/Board/"+TileMap.markId);
+				if (@event.IsActionPressed("click")){
 					if (_target.GetChildCount()>0){
 						if (_target.GetChild(0).GetMeta("filled").AsBool() == true) {
 							_target.GetChild(0).QueueFree();
 							TileMap.markId = 0;
 						} else {
 							_target.GetChild(0).QueueFree();
-							_target.AddChild(CrossMod.Instantiate());
+							_target.AddChild(FillMod.Instantiate());
 							TileMap.markId = 0;
 						}
 					} else {
@@ -45,10 +44,7 @@ public partial class nono : Control
 						TileMap.markId = 0;
 					}
 				}
-			}
-			else if (@event.IsActionPressed("right click")){
-				if (TileMap.markId <= 25 && TileMap.markId > 0) {
-					var _target = GetNode("./ColorRect2/Board/"+TileMap.markId);
+				if (@event.IsActionPressed("rightclick")){
 					if (_target.GetChildCount()>0){
 						if (_target.GetChild(0).GetMeta("filled").AsBool() == false) {
 							_target.GetChild(0).QueueFree();
@@ -68,7 +64,6 @@ public partial class nono : Control
 				GetNode("WordMark").AddChild(Word.Instantiate());
 				complete = true;
 			}
-			
 		}
     }
 

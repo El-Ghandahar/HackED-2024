@@ -69,6 +69,7 @@ text = "Login
 "
 
 [node name="UsernameInput" type="LineEdit" parent="LoginContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 offset_left = 10.0
 offset_top = 55.0
@@ -79,6 +80,7 @@ grow_vertical = 2
 placeholder_text = "Username"
 
 [node name="PasswordInput" type="LineEdit" parent="LoginContainer"]
+unique_name_in_owner = true
 layout_mode = 0
 offset_left = 10.0
 offset_top = 100.0
@@ -88,6 +90,7 @@ placeholder_text = "Password"
 secret = true
 
 [node name="LoginButton" type="Button" parent="LoginContainer"]
+unique_name_in_owner = true
 layout_mode = 0
 offset_left = 510.0
 offset_top = 150.0
@@ -96,6 +99,7 @@ offset_bottom = 181.0
 text = "Login"
 
 [node name="ForgotButton" type="Button" parent="LoginContainer"]
+unique_name_in_owner = true
 layout_mode = 0
 offset_left = 25.0
 offset_top = 150.0
@@ -103,3 +107,9 @@ offset_right = 170.0
 offset_bottom = 181.0
 text = "Forgot Password?"
 flat = true
+
+[connection signal="focus_entered" from="LoginContainer/UsernameInput" to="." method="UsernameFocusEntered"]
+[connection signal="text_submitted" from="LoginContainer/UsernameInput" to="." method="LineEnter"]
+[connection signal="text_submitted" from="LoginContainer/PasswordInput" to="." method="LineEnter"]
+[connection signal="pressed" from="LoginContainer/LoginButton" to="." method="LoginSubmit"]
+[connection signal="pressed" from="LoginContainer/ForgotButton" to="." method="ForgotPassword"]

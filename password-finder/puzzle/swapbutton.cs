@@ -4,11 +4,8 @@ using System.Security.Cryptography.X509Certificates;
 public partial class swapbutton : Button
 {
 	public static string mode = "Fill";
-	public Node self;
 	// Called when the node enters the scene tree for the first time.
-	public override void _Ready()
-	{
-		self = GetNode("../Button");
+	public override void _Ready(){
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -24,8 +21,6 @@ public partial class swapbutton : Button
 			if (pressed) {
 				mode = "Fill";
 			}
-			
-
 		}
 	}
 }

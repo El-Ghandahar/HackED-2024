@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bid13fx38mwnm"]
+[gd_scene load_steps=9 format=3 uid="uid://bid13fx38mwnm"]
 
 [ext_resource type="Script" path="res://puzzle/nono.cs" id="1_b2k0q"]
 [ext_resource type="TileSet" uid="uid://caymj3rsmfqaf" path="res://puzzle/non.tres" id="1_vt2ru"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://puzzle/TileMap.cs" id="2_1nagq"]
 [ext_resource type="PackedScene" uid="uid://bt2of3yebjlmq" path="res://puzzle/CrossMod.tscn" id="3_sya5t"]
 [ext_resource type="Script" path="res://puzzle/swapbutton.cs" id="4_4u45h"]
+[ext_resource type="PackedScene" uid="uid://y58v4v8lcg0p" path="res://puzzle/word.tscn" id="4_vtus6"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_cnomv"]
 font_color = Color(0.588235, 0.588235, 0.588235, 1)
@@ -18,6 +19,7 @@ offset_bottom = 40.0
 script = ExtResource("1_b2k0q")
 FillMod = ExtResource("2_0orqs")
 CrossMod = ExtResource("3_sya5t")
+Word = ExtResource("4_vtus6")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0
@@ -156,3 +158,6 @@ offset_bottom = 191.0
 scale = Vector2(1.2, 1.2)
 text = "5           1           1           1           5"
 label_settings = SubResource("LabelSettings_cnomv")
+
+[node name="WordMark" type="Marker2D" parent="."]
+position = Vector2(646, 568)

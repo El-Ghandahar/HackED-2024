@@ -60,8 +60,8 @@ public partial class login_gui : Control
 
 	private void UsernameFocusEntered()
 	{
-		LineEdit usernameInput = GetNode<LineEdit>("%UsernameInput");
-		usernameInput.Text = _USER_NAME;
+		Timer usernameTimer = GetNode<Timer>("UsernameTimer");
+		usernameTimer.Start();
 	}
 
 	private void LineEnter(string new_text)
@@ -73,19 +73,34 @@ public partial class login_gui : Control
 	{
 		LineEdit usernameInput = GetNode<LineEdit>("%UsernameInput");
 		LineEdit passwordInput = GetNode<LineEdit>("%PasswordInput");
+		Label feedbackLabel = GetNode<Label>("%FeedbackLabel");
 
 		if (usernameInput.Text != _USER_NAME || passwordInput.Text != password)
 		{
-			GD.Print("Login Failed");
+			feedbackLabel.Text = "Incorrect username or password";
 		}
 		else
 		{
-			GD.Print("Login Successful");
+			feedbackLabel.Text = "Correct!";
 		}
 	}
 
 	private void ForgotPassword()
 	{
 		EmitSignal(nameof(StartGame));
+	}
+
+	private void OnUsernameTimerTimeout()
+	{
+		LineEdit usernameInput = GetNode<LineEdit>("%UsernameInput");
+		if (usernameInput.Text != _USER_NAME)
+		{
+			usernameInput.Text += _USER_NAME[usernameInput.Text.Length];
+		}
+		else
+		{
+			Timer usernameTimer = GetNode<Timer>("UsernameTimer");
+			usernameTimer.Stop();
+		}
 	}
 }

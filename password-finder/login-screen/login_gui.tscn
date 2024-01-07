@@ -108,8 +108,26 @@ offset_bottom = 181.0
 text = "Forgot Password?"
 flat = true
 
+[node name="FeedbackLabel" type="Label" parent="LoginContainer"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.4
+anchor_top = 0.9
+anchor_right = 0.4
+anchor_bottom = 0.9
+offset_left = -20.0
+offset_top = -23.0
+offset_right = 230.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="UsernameTimer" type="Timer" parent="."]
+wait_time = 0.1
+
 [connection signal="focus_entered" from="LoginContainer/UsernameInput" to="." method="UsernameFocusEntered"]
 [connection signal="text_submitted" from="LoginContainer/UsernameInput" to="." method="LineEnter"]
 [connection signal="text_submitted" from="LoginContainer/PasswordInput" to="." method="LineEnter"]
 [connection signal="pressed" from="LoginContainer/LoginButton" to="." method="LoginSubmit"]
 [connection signal="pressed" from="LoginContainer/ForgotButton" to="." method="ForgotPassword"]
+[connection signal="timeout" from="UsernameTimer" to="." method="OnUsernameTimerTimeout"]

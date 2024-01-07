@@ -22,7 +22,7 @@ public partial class TileMap : Godot.TileMap
     public override void _Input(InputEvent @event)
     {
 		
-		if (@event.IsActionPressed("click")) {
+		if (@event.IsActionPressed("click")||@event.IsActionPressed("rightclick")) {
 			mouse = GetLocalMousePosition();
 			var mappos = tilemap.LocalToMap(mouse);
 			var center = tilemap.MapToLocal(mappos);

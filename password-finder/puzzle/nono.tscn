@@ -15,6 +15,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+mouse_filter = 1
 script = ExtResource("1_b2k0q")
 FillMod = ExtResource("2_0orqs")
 CrossMod = ExtResource("3_sya5t")

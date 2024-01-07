@@ -43,6 +43,11 @@ public partial class nono : Control
 						_target.AddChild(FillMod.Instantiate());
 						TileMap.markId = 0;
 					}
+
+					if (Check(checksum) == "Success"){
+						GetNode("WordMark").AddChild(Word.Instantiate());
+						complete = true;
+					}
 				}
 				if (@event.IsActionPressed("rightclick")){
 					if (_target.GetChildCount()>0){
@@ -58,11 +63,12 @@ public partial class nono : Control
 						_target.AddChild(CrossMod.Instantiate());
 						TileMap.markId = 0;
 					}
+					if (Check(checksum) == "Success"){
+						GetNode("WordMark").AddChild(Word.Instantiate());
+						complete = true;
+					}
 				}
-			}
-			if (Check(checksum) == "Success"){
-				GetNode("WordMark").AddChild(Word.Instantiate());
-				complete = true;
+				
 			}
 		}
     }

@@ -28,60 +28,71 @@ public partial class nono : Control
     {
 		if (complete == false) {
 			if (@event.IsActionPressed("click")){
-				if (Check(checksum) == "Success"){
-					GetNode("WordMark").AddChild(Word.Instantiate());
-					complete = true;
-				}
-				else if (TileMap.markId == 0){
 
-				}
-				else if (TileMap.markId <= 25 && TileMap.markId > 0) {
-					var _target = GetNode("./ColorRect2/Board/"+TileMap.markId);
-					if (swapbutton.mode == "Fill"){
-						if (_target.GetChildCount()>0){
-							if (_target.GetChild(0) != null) {
-								_target.GetChild(0).QueueFree();
-								TileMap.markId = 0;
-							}
-						} else {
-							_target.AddChild(FillMod.Instantiate());
+				if (TileMap.markId <= 25 && TileMap.markId > 0) {
+				var _target = GetNode("./ColorRect2/Board/"+TileMap.markId);
+					if (_target.GetChildCount()>0){
+						if (_target.GetChild(0).GetMeta("filled").AsBool() == true) {
+							_target.GetChild(0).QueueFree();
 							TileMap.markId = 0;
-						}
-					}
-					else if (swapbutton.mode == "Cross"){
-						if (_target.GetChildCount()>0){
-							if (_target.GetChild(0) != null) {
-								_target.GetChild(0).QueueFree();
-								TileMap.markId = 0;
-							}
 						} else {
+							_target.GetChild(0).QueueFree();
 							_target.AddChild(CrossMod.Instantiate());
 							TileMap.markId = 0;
 						}
+					} else {
+						_target.AddChild(FillMod.Instantiate());
+						TileMap.markId = 0;
 					}
 				}
 			}
+			else if (@event.IsActionPressed("right click")){
+				if (TileMap.markId <= 25 && TileMap.markId > 0) {
+					var _target = GetNode("./ColorRect2/Board/"+TileMap.markId);
+					if (_target.GetChildCount()>0){
+						if (_target.GetChild(0).GetMeta("filled").AsBool() == false) {
+							_target.GetChild(0).QueueFree();
+							TileMap.markId = 0;
+						} else {
+							_target.GetChild(0).QueueFree();
+							_target.AddChild(CrossMod.Instantiate());
+							TileMap.markId = 0;
+						}
+					} else {
+						_target.AddChild(CrossMod.Instantiate());
+						TileMap.markId = 0;
+					}
+				}
+			}
+			if (Check(checksum) == "Success"){
+				GetNode("WordMark").AddChild(Word.Instantiate());
+				complete = true;
+			}
+			
 		}
     }
 
 	public string Check(Array key){
-		Node targ;
+		//init vars
+		Node targ; //markers
 		var result = 0;
 		var filled = 0;
-		for (var i = 1; i <= 25; i++){
-			targ = GetNode("./ColorRect2/Board/"+i);
-			if (targ.GetChildCount() > 0){
-				if (targ.GetChild(0).GetClass() == "Filled"){
-					for (var a = 1; a < key.Length; a++){
-						var k = key.GetValue(a).ToString;
-						if (i.ToString == k) {
-							result++;
+
+		for (var i = 0; i < 25; i++){ //check every marker
+			targ = GetNode("./ColorRect2/Board/"+(i+1)); //define marker
+			if (targ.GetChildCount() > 0){	// make sure it has kids
+				if (targ.GetChild(0).GetMeta("filled").AsBool() == true){	// right type of kids
+					for (var a = 0; a < key.Length; a++){	// check if correct marker
+						var k = key.GetValue(a).ToString();
+						if ((i+1).ToString() == k) {
+							result++;	// increment correct marker count
 						}
 					}
-					filled++;
+					filled++; // increment markers filled
 				}
 			}
 		}
+		GD.Print(result+","+filled);
 		if (result == key.Length && filled == key.Length){
 			return "Success";
 		}

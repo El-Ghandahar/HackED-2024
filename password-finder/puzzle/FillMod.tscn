@@ -6,3 +6,4 @@
 [node name="Filled" type="Sprite2D"]
 texture = ExtResource("1_t7c3y")
 script = ExtResource("2_sjrha")
+metadata/filled = true

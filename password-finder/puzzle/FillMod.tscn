@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://d4duovllobbdw"]
+
+[ext_resource type="Texture2D" uid="uid://c3prrvbnlstud" path="res://puzzle/filled.png" id="1_t7c3y"]
+
+[node name="Filled" type="Sprite2D"]
+texture = ExtResource("1_t7c3y")

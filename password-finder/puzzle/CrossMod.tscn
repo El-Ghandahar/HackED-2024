@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bt2of3yebjlmq"]
+
+[ext_resource type="Texture2D" uid="uid://c42cyixmsatjf" path="res://puzzle/crossed.png" id="1_jsxxp"]
+
+[node name="Sprite2D" type="Sprite2D"]
+texture = ExtResource("1_jsxxp")

@@ -1,22 +1,158 @@
-[gd_scene load_steps=3 format=3 uid="uid://bid13fx38mwnm"]
+[gd_scene load_steps=8 format=3 uid="uid://bid13fx38mwnm"]
 
+[ext_resource type="Script" path="res://puzzle/nono.cs" id="1_b2k0q"]
 [ext_resource type="TileSet" uid="uid://caymj3rsmfqaf" path="res://puzzle/non.tres" id="1_vt2ru"]
+[ext_resource type="PackedScene" uid="uid://d4duovllobbdw" path="res://puzzle/FillMod.tscn" id="2_0orqs"]
 [ext_resource type="Script" path="res://puzzle/TileMap.cs" id="2_1nagq"]
+[ext_resource type="PackedScene" uid="uid://bt2of3yebjlmq" path="res://puzzle/CrossMod.tscn" id="3_sya5t"]
+[ext_resource type="Script" path="res://puzzle/swapbutton.cs" id="4_4u45h"]
 
-[node name="Node2D" type="Node2D"]
+[sub_resource type="LabelSettings" id="LabelSettings_cnomv"]
+font_color = Color(0.588235, 0.588235, 0.588235, 1)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_b2k0q")
+FillMod = ExtResource("2_0orqs")
+CrossMod = ExtResource("3_sya5t")
 
 [node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
 offset_right = 1152.0
 offset_bottom = 648.0
-color = Color(0.215686, 0.419608, 0.678431, 1)
+color = Color(0.113725, 0.113725, 0.113725, 1)
 
-[node name="TileMap" type="TileMap" parent="ColorRect"]
+[node name="ColorRect2" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 248.0
+offset_top = 64.0
+offset_right = 1036.0
+offset_bottom = 614.0
+color = Color(0.290196, 0.290196, 0.290196, 1)
+
+[node name="Board" type="TileMap" parent="ColorRect2"]
 tile_set = ExtResource("1_vt2ru")
 format = 2
 layer_0/name = "Default"
-layer_0/tile_data = PackedInt32Array(262151, 1, 2, 327687, 1, 2, 327688, 1, 2, 262152, 1, 2)
-layer_1/name = "Fill"
-layer_1/tile_data = PackedInt32Array()
-layer_2/name = "Crossed"
-layer_2/tile_data = PackedInt32Array()
+layer_0/tile_data = PackedInt32Array(196613, 0, 0, 196614, 0, 0, 262149, 0, 0, 262150, 0, 0, 196615, 0, 0, 262151, 0, 0, 196612, 0, 0, 262148, 0, 0, 196616, 0, 0, 262152, 0, 0, 327688, 0, 0, 393224, 0, 0, 393223, 0, 0, 393222, 0, 0, 393221, 0, 0, 393220, 0, 0, 327684, 0, 0, 327685, 0, 0, 327686, 0, 0, 327687, 0, 0, 131076, 0, 0, 131077, 0, 0, 131078, 0, 0, 131079, 0, 0, 131080, 0, 0)
 script = ExtResource("2_1nagq")
+
+[node name="1" type="Marker2D" parent="ColorRect2/Board"]
+position = Vector2(288, 160)
+
+[node name="2" type="Marker2D" parent="ColorRect2/Board"]
+position = Vector2(352, 160)
+
+[node name="3" type="Marker2D" parent="ColorRect2/Board"]
+position = Vector2(416, 160)
+
+[node name="4" type="Marker2D" parent="ColorRect2/Board"]
+position = Vector2(480, 160)
+
+[node name="5" type="Marker2D" parent="ColorRect2/Board"]
+position = Vector2(544, 160)
+
+[node name="6" type="Marker2D" parent="ColorRect2/Board"]
+position = Vector2(288, 224)
+
+[node name="7" type="Marker2D" parent="ColorRect2/Board"]
+position = Vector2(352, 224)
+
+[node name="8" type="Marker2D" parent="ColorRect2/Board"]
+position = Vector2(416, 224)
+
+[node name="9" type="Marker2D" parent="ColorRect2/Board"]
+position = Vector2(480, 224)
+
+[node name="10" type="Marker2D" parent="ColorRect2/Board"]
+position = Vector2(544, 224)
+
+[node name="11" type="Marker2D" parent="ColorRect2/Board"]
+position = Vector2(288, 288)
+
+[node name="12" type="Marker2D" parent="ColorRect2/Board"]
+position = Vector2(352, 288)
+
+[node name="13" type="Marker2D" parent="ColorRect2/Board"]
+position = Vector2(416, 288)
+
+[node name="14" type="Marker2D" parent="ColorRect2/Board"]
+position = Vector2(480, 288)
+
+[node name="15" type="Marker2D" parent="ColorRect2/Board"]
+position = Vector2(544, 288)
+
+[node name="16" type="Marker2D" parent="ColorRect2/Board"]
+position = Vector2(288, 352)
+
+[node name="17" type="Marker2D" parent="ColorRect2/Board"]
+position = Vector2(352, 352)
+
+[node name="18" type="Marker2D" parent="ColorRect2/Board"]
+position = Vector2(416, 352)
+
+[node name="19" type="Marker2D" parent="ColorRect2/Board"]
+position = Vector2(480, 352)
+
+[node name="20" type="Marker2D" parent="ColorRect2/Board"]
+position = Vector2(544, 352)
+
+[node name="21" type="Marker2D" parent="ColorRect2/Board"]
+position = Vector2(288, 416)
+
+[node name="22" type="Marker2D" parent="ColorRect2/Board"]
+position = Vector2(352, 416)
+
+[node name="23" type="Marker2D" parent="ColorRect2/Board"]
+position = Vector2(416, 416)
+
+[node name="24" type="Marker2D" parent="ColorRect2/Board"]
+position = Vector2(480, 416)
+
+[node name="25" type="Marker2D" parent="ColorRect2/Board"]
+position = Vector2(544, 416)
+
+[node name="Button" type="Button" parent="ColorRect2"]
+layout_mode = 0
+offset_left = 344.0
+offset_top = 28.0
+offset_right = 469.0
+offset_bottom = 62.0
+toggle_mode = true
+text = "Swap mode"
+script = ExtResource("4_4u45h")
+
+[node name="mode" type="Marker2D" parent="ColorRect2/Button"]
+position = Vector2(-29, 16)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+offset_left = 457.0
+offset_top = 212.0
+offset_right = 494.0
+offset_bottom = 438.0
+scale = Vector2(1.2, 1.2)
+text = "1 1
+
+2 1
+
+1 1 1
+
+1 2
+
+1 1"
+label_settings = SubResource("LabelSettings_cnomv")
+horizontal_alignment = 2
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 525.0
+offset_top = 166.0
+offset_right = 792.0
+offset_bottom = 191.0
+scale = Vector2(1.2, 1.2)
+text = "5           1           1           1           5"
+label_settings = SubResource("LabelSettings_cnomv")

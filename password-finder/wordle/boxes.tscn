@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://bwqa2rjbf25i7"]
+[gd_scene load_steps=2 format=3 uid="uid://5u0ja3ks1twt"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_of8s4"]
 bg_color = Color(0.0980392, 0.0980392, 0.0980392, 1)
@@ -22,6 +22,7 @@ layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_of8s4")
 
 [node name="Label" type="Label" parent="MarginContainer/Panel"]
+unique_name_in_owner = true
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5

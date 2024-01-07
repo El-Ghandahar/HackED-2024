@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bkb4j60jb3hyx"]
 
 [ext_resource type="Script" path="res://wordle/wordle.cs" id="1_fbbkj"]
-[ext_resource type="PackedScene" path="res://wordle/boxes.tscn" id="2_riivf"]
+[ext_resource type="PackedScene" uid="uid://5u0ja3ks1twt" path="res://wordle/boxes.tscn" id="2_riivf"]
 
 [node name="Wordle" type="Control"]
 layout_mode = 3
@@ -54,3 +54,14 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 40
 alignment = 1
+
+[node name="TextField" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = -430.0
+offset_top = -50.0
+offset_right = 1183.0
+offset_bottom = 689.0
+flat = true
+
+[connection signal="text_changed" from="TextField" to="." method="OnTextFieldChanged"]
+[connection signal="text_submitted" from="TextField" to="." method="OnTextFieldSubmit"]

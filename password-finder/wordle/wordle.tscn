@@ -1,6 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://bkb4j60jb3hyx"]
+[gd_scene load_steps=3 format=3 uid="uid://bkb4j60jb3hyx"]
 
 [ext_resource type="Script" path="res://wordle/wordle.cs" id="1_fbbkj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qx1cr"]
+bg_color = Color(0.0980392, 0.0980392, 0.0980392, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.345098, 0.345098, 0.345098, 1)
 
 [node name="Wordle" type="Control"]
 layout_mode = 3
@@ -10,3 +18,132 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_fbbkj")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1151.0
+offset_bottom = 647.0
+color = Color(0.0980392, 0.0980392, 0.0980392, 1)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 414.0
+offset_top = -2.0
+offset_right = 675.0
+offset_bottom = 87.0
+theme_override_font_sizes/font_size = 41
+text = "Wordle"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 67.0
+offset_right = 1148.0
+offset_bottom = 69.0
+color = Color(0.282353, 0.282353, 0.282353, 1)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 327.0
+offset_top = -241.0
+offset_right = -376.0
+offset_bottom = 92.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 40
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+layout_direction = 2
+layout_mode = 2
+theme_override_constants/separation = 22
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="HBoxContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qx1cr")
+
+[node name="LineEdit" type="LineEdit" parent="HBoxContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+placeholder_text = "herro"
+alignment = 1
+max_length = 1
+flat = true
+
+[node name="MarginContainer2" type="MarginContainer" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="HBoxContainer/VBoxContainer/MarginContainer2"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qx1cr")
+
+[node name="LineEdit" type="LineEdit" parent="HBoxContainer/VBoxContainer/MarginContainer2"]
+layout_mode = 2
+placeholder_text = "herro"
+alignment = 1
+max_length = 1
+flat = true
+
+[node name="MarginContainer3" type="MarginContainer" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="HBoxContainer/VBoxContainer/MarginContainer3"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qx1cr")
+
+[node name="LineEdit" type="LineEdit" parent="HBoxContainer/VBoxContainer/MarginContainer3"]
+layout_mode = 2
+placeholder_text = "herro"
+alignment = 1
+max_length = 1
+flat = true
+
+[node name="MarginContainer4" type="MarginContainer" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="HBoxContainer/VBoxContainer/MarginContainer4"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qx1cr")
+
+[node name="LineEdit" type="LineEdit" parent="HBoxContainer/VBoxContainer/MarginContainer4"]
+layout_mode = 2
+placeholder_text = "herro"
+alignment = 1
+max_length = 1
+flat = true
+
+[node name="MarginContainer5" type="MarginContainer" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="HBoxContainer/VBoxContainer/MarginContainer5"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qx1cr")
+
+[node name="LineEdit" type="LineEdit" parent="HBoxContainer/VBoxContainer/MarginContainer5"]
+layout_mode = 2
+placeholder_text = "herro"
+alignment = 1
+max_length = 1
+flat = true
+
+[node name="MarginContainer6" type="MarginContainer" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="HBoxContainer/VBoxContainer/MarginContainer6"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qx1cr")
+
+[node name="LineEdit" type="LineEdit" parent="HBoxContainer/VBoxContainer/MarginContainer6"]
+layout_mode = 2
+placeholder_text = "herro"
+alignment = 1
+max_length = 1
+flat = true

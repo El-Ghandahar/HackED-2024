@@ -78,6 +78,7 @@ public partial class nono : Control
 							result++;
 						}
 					}
+					filled++;
 				}
 			}
 		}

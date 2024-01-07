@@ -1,7 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://bvq2olfrg5p2k"]
+[gd_scene load_steps=7 format=3 uid="uid://bvq2olfrg5p2k"]
 
 [ext_resource type="PackedScene" uid="uid://bi6073tqhaol2" path="res://platformer/scenes/player.tscn" id="1_a7gun"]
-[ext_resource type="Script" path="res://platformer/scenes/platformerWorld.gd" id="1_dxpsh"]
 [ext_resource type="PackedScene" uid="uid://dra3vye4oxoac" path="res://platformer/scenes/letter.tscn" id="2_7dx7r"]
 [ext_resource type="PackedScene" uid="uid://bj5rqphebaule" path="res://platformer/scenes/tile_map.tscn" id="3_a8dw6"]
 [ext_resource type="Texture2D" uid="uid://cwy0njwrlu6km" path="res://assets/background_0.png" id="4_7ywxo"]
@@ -14,7 +13,6 @@ size = Vector2(263.75, 36)
 
 [node name="PlatformerWorld" type="Node2D"]
 position = Vector2(1, -1)
-script = ExtResource("1_dxpsh")
 
 [node name="Player" parent="." instance=ExtResource("1_a7gun")]
 position = Vector2(-103, -2)

@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://dra3vye4oxoac"]
+
+[ext_resource type="Script" path="res://platformer/scenes/letter.gd" id="1_ctri0"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_iuwgd"]
+
+[node name="Letter" type="Area2D"]
+position = Vector2(1, 0)
+script = ExtResource("1_ctri0")
+collectedPoints = null
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_iuwgd")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -19.0
+offset_top = -13.0
+offset_right = 21.0
+offset_bottom = 10.0
+text = "L"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

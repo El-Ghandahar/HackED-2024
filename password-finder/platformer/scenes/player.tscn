@@ -10,7 +10,7 @@ script/source = "extends CharacterBody2D
 @export var jump_force = 450
 @export var letters = 0
 
-
+signal letter_collected
 
 func _physics_process(delta):
 	if !is_on_floor():
@@ -20,6 +20,7 @@ func _physics_process(delta):
 	
 	if Input.is_action_just_pressed(\"jump\"):
 		velocity.y = -jump_force
+		emit_signal(\"letter_collected\")
 	
 	var horizontal_direction = Input.get_axis(\"move_left\", \"move_right\")
 	
@@ -121,12 +122,12 @@ _data = {
 script = SubResource("GDScript_cspdr")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(3, -42)
 texture = ExtResource("2_2mfy7")
 hframes = 10
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
-position = Vector2(-5, 20.75)
+position = Vector2(-1, -18)
 shape = SubResource("RectangleShape2D_oakod")
 
 [node name="Camera2D" type="Camera2D" parent="."]

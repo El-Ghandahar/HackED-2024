@@ -1,4 +1,6 @@
 extends Area2D
 
-func _on_letter_body_entered(body):
-	(body).coin_collected.emit()
+@onready var label = $Label 
+func _on_body_entered(body):
+	if body.name == "Player":
+		queue_free()

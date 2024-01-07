@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://bvq2olfrg5p2k"]
+[gd_scene load_steps=7 format=3 uid="uid://bvq2olfrg5p2k"]
 
 [ext_resource type="PackedScene" uid="uid://bi6073tqhaol2" path="res://platformer/scenes/player.tscn" id="1_a7gun"]
 [ext_resource type="PackedScene" uid="uid://dra3vye4oxoac" path="res://platformer/scenes/letter.tscn" id="2_7dx7r"]
 [ext_resource type="PackedScene" uid="uid://bj5rqphebaule" path="res://platformer/scenes/tile_map.tscn" id="3_a8dw6"]
+[ext_resource type="Texture2D" uid="uid://cwy0njwrlu6km" path="res://assets/background_0.png" id="4_7ywxo"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_rgq01"]
 size = Vector2(1000, 100)
@@ -20,42 +21,53 @@ gravity = 80
 jump_force = 1000
 
 [node name="Platform" type="StaticBody2D" parent="."]
+visibility_layer = 3
 position = Vector2(7, 90)
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="Platform"]
 modulate = Color(0.270588, 0.113725, 0.235294, 1)
+visibility_layer = 3
 scale = Vector2(0.263, 0.372501)
 mesh = SubResource("QuadMesh_rgq01")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platform"]
+visibility_layer = 3
 shape = SubResource("RectangleShape2D_lr8mw")
 
 [node name="Platform2" type="StaticBody2D" parent="."]
+visibility_layer = 3
 position = Vector2(269, 90)
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="Platform2"]
 modulate = Color(0.282353, 0.137255, 0.0117647, 1)
+visibility_layer = 3
 scale = Vector2(0.263, 0.372501)
 mesh = SubResource("QuadMesh_rgq01")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platform2"]
+visibility_layer = 3
 shape = SubResource("RectangleShape2D_lr8mw")
 
 [node name="Letter" parent="." instance=ExtResource("2_7dx7r")]
+visibility_layer = 3
 position = Vector2(562, 28)
 scale = Vector2(2, 2)
 
 [node name="Letter2" parent="." instance=ExtResource("2_7dx7r")]
+visibility_layer = 3
 position = Vector2(639, 28)
 scale = Vector2(2, 2)
 
 [node name="TileMap" parent="." instance=ExtResource("3_a8dw6")]
+visibility_layer = 3
 position = Vector2(-129, 72)
 
 [node name="TileMap2" parent="." instance=ExtResource("3_a8dw6")]
+visibility_layer = 3
 position = Vector2(207, 73)
 
 [node name="Platform3" type="StaticBody2D" parent="."]
+visibility_layer = 3
 position = Vector2(531, 90)
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="Platform3"]
@@ -65,3 +77,13 @@ mesh = SubResource("QuadMesh_rgq01")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platform3"]
 shape = SubResource("RectangleShape2D_lr8mw")
+
+[node name="Background" type="Sprite2D" parent="."]
+show_behind_parent = true
+position = Vector2(16, -14)
+texture = ExtResource("4_7ywxo")
+
+[node name="Background2" type="Sprite2D" parent="."]
+show_behind_parent = true
+position = Vector2(304, -14)
+texture = ExtResource("4_7ywxo")

@@ -3,7 +3,7 @@ using System;
 using System.Security.Cryptography.X509Certificates;
 public partial class swapbutton : Button
 {
-	public string mode = "Fill";
+	public static string mode = "Fill";
 	public Node self;
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()

@@ -1,8 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://bid13fx38mwnm"]
+[gd_scene load_steps=8 format=3 uid="uid://bid13fx38mwnm"]
 
 [ext_resource type="Script" path="res://puzzle/nono.cs" id="1_b2k0q"]
 [ext_resource type="TileSet" uid="uid://caymj3rsmfqaf" path="res://puzzle/non.tres" id="1_vt2ru"]
+[ext_resource type="PackedScene" uid="uid://d4duovllobbdw" path="res://puzzle/FillMod.tscn" id="2_0orqs"]
 [ext_resource type="Script" path="res://puzzle/TileMap.cs" id="2_1nagq"]
+[ext_resource type="PackedScene" uid="uid://bt2of3yebjlmq" path="res://puzzle/CrossMod.tscn" id="3_sya5t"]
 [ext_resource type="Script" path="res://puzzle/swapbutton.cs" id="4_4u45h"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_cnomv"]
@@ -14,6 +16,8 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("1_b2k0q")
+FillMod = ExtResource("2_0orqs")
+CrossMod = ExtResource("3_sya5t")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0

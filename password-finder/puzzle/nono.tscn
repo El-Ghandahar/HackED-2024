@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://bid13fx38mwnm"]
+
+[ext_resource type="TileSet" uid="uid://caymj3rsmfqaf" path="res://puzzle/non.tres" id="1_vt2ru"]
+[ext_resource type="Script" path="res://puzzle/TileMap.cs" id="2_1nagq"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0.215686, 0.419608, 0.678431, 1)
+
+[node name="TileMap" type="TileMap" parent="ColorRect"]
+tile_set = ExtResource("1_vt2ru")
+format = 2
+layer_0/name = "Default"
+layer_0/tile_data = PackedInt32Array(262151, 1, 2, 327687, 1, 2, 327688, 1, 2, 262152, 1, 2)
+layer_1/name = "Fill"
+layer_1/tile_data = PackedInt32Array()
+layer_2/name = "Crossed"
+layer_2/tile_data = PackedInt32Array()
+script = ExtResource("2_1nagq")

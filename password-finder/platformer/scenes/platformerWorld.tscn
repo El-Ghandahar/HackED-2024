@@ -48,6 +48,18 @@ mesh = SubResource("QuadMesh_rgq01")
 visibility_layer = 3
 shape = SubResource("RectangleShape2D_lr8mw")
 
+[node name="Platform3" type="StaticBody2D" parent="."]
+visibility_layer = 3
+position = Vector2(531, 90)
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Platform3"]
+modulate = Color(0.282353, 0.137255, 0.0117647, 1)
+scale = Vector2(0.263, 0.372501)
+mesh = SubResource("QuadMesh_rgq01")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform3"]
+shape = SubResource("RectangleShape2D_lr8mw")
+
 [node name="Letter" parent="." instance=ExtResource("2_7dx7r")]
 visibility_layer = 3
 position = Vector2(562, 28)
@@ -66,18 +78,6 @@ position = Vector2(-129, 72)
 visibility_layer = 3
 position = Vector2(207, 73)
 
-[node name="Platform3" type="StaticBody2D" parent="."]
-visibility_layer = 3
-position = Vector2(531, 90)
-
-[node name="MeshInstance2D" type="MeshInstance2D" parent="Platform3"]
-modulate = Color(0.282353, 0.137255, 0.0117647, 1)
-scale = Vector2(0.263, 0.372501)
-mesh = SubResource("QuadMesh_rgq01")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform3"]
-shape = SubResource("RectangleShape2D_lr8mw")
-
 [node name="Background" type="Sprite2D" parent="."]
 show_behind_parent = true
 position = Vector2(16, -14)
@@ -85,5 +85,10 @@ texture = ExtResource("4_7ywxo")
 
 [node name="Background2" type="Sprite2D" parent="."]
 show_behind_parent = true
-position = Vector2(304, -14)
+position = Vector2(305, -14)
+texture = ExtResource("4_7ywxo")
+
+[node name="Background3" type="Sprite2D" parent="."]
+show_behind_parent = true
+position = Vector2(-270, -14)
 texture = ExtResource("4_7ywxo")
